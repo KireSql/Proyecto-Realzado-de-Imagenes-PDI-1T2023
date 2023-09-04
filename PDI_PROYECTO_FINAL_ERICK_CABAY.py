@@ -107,7 +107,7 @@ plt.title('Imagen Original')
 # Segunda subtrama: Imagen con brillo alto
 plt.subplot(2, 3, 2)
 plt.imshow(cv2.cvtColor(imagen_alto_brillo, cv2.COLOR_BGR2RGB))
-plt.title('Imagen con Bajo Brillo')
+plt.title('Imagen con Brillo Alto')
 
 # Tercera subtrama: Imagen oscurecida
 plt.subplot(2, 3, 3)
