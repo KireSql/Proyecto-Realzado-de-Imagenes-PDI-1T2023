@@ -94,6 +94,25 @@ order = 2
 high_boost = 2.0
 enhanced_image = homomorphic_filter(darkened_image, cutoff_frequency, order, high_boost)
 
+
+
+# # Calcular histogramas para cada canal de color (BGR)
+# histograma_azul = cv2.calcHist([imagen], [0], None, [256], [0, 256])
+# histograma_verde = cv2.calcHist([hist_equalization_result], [1], None, [256], [0, 256])
+
+# # Tramar histogramas
+# plt.figure(figsize=(8, 6))
+# plt.title('Histograma de la Imagen (Canal BGR)')
+# plt.xlabel('Valor de Pixel')
+# plt.ylabel('Frecuencia')
+# plt.xlim([0, 255])
+# plt.plot(histograma_azul, color='blue', label='Azul')
+# plt.plot(histograma_verde, color='green', label='Verde')
+# plt.legend()
+# plt.grid(True)
+# plt.show()
+
+
 '''Mostrar la imagen original, las imagenes con difuminado y las imagenes realzadas
  Borrar esta parte si solo se desea registrar los valores de la comparacion SSIM y PSNR sin mostrar las imagenes. '''
 # Crear una figura de matplotlib con subtramas para mostrar todas las imágenes
