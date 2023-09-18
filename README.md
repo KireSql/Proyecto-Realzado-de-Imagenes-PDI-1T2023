@@ -3,7 +3,7 @@ ESPOL<br />
 Erick Cabay<br />
 Sergio Veliz<br />
 Repositorio Imagenes Generadas: https://drive.google.com/drive/folders/1kr0-4u4SNvijakUevNw5NwAlFK8Al9Xb?usp=sharing<br />
-Las carpetas de imágenes tienen la siguiente distribución:
+Las carpetas de imágenes tienen la siguiente distribución:<br />
 Reales: Todas las imágenes reales obtenidas<br />
 Realzadas: Imágenes realzadas separadas por carpetas según el algoritmo de realzado y si son reales o sintéticas<br />
 Sinteticas: Todas las imágenes sintéticas obtenidas<br />
