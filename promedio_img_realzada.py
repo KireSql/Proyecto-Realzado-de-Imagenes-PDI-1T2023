@@ -65,6 +65,12 @@ def apply_histogram_equalization(image):
 
     return result_image
 
+
+# Filtro para eliminar ruido
+def apply_median_filter(frame):
+    filtered_frame = cv2.medianBlur(frame, 3)
+    return filtered_frame
+
 # Función para procesar una imagen
 def process_image(image_path, contador_imagen):
     print("Procesando imagen ", contador_imagen)
@@ -93,11 +99,19 @@ def process_image(image_path, contador_imagen):
     ssim_value_equalization, psnr_value_equalization = evaluate_metrics(imagen, hist_equalization_result)
     ssim_value_homomorphic, psnr_value_homomorphic = evaluate_metrics(imagen, enhanced_image)
     
+    # Guardar Imagenes
+    # Ruta para guardar la imagen
+    ruta_guardado_hist = 'D:\\NARANJAS\\Img\\REALZADAS\\Realzadas_Ec_reales\\realzada_hist_'+str(contador_imagen)+'.png'
+    ruta_guardado_homomorfico = 'D:\\NARANJAS\\Img\\REALZADAS\\Realzadas_Hom_reales\\realzada_homomorfico_'+str(contador_imagen)+'.png'
+    # Guardar la imagen en la ruta especificada
+    cv2.imwrite(ruta_guardado_hist, apply_median_filter(hist_equalization_result))
+    cv2.imwrite(ruta_guardado_homomorfico, apply_median_filter(enhanced_image))
+
     return ssim_value_equalization, psnr_value_equalization, ssim_value_homomorphic, psnr_value_homomorphic
 
 # Carpeta de imágenes
-input_folder = 'D:\\NARANJAS\\Img\\test'  # Reemplaza con la ruta de tu carpeta de imágenes
-output_file = 'resultados.csv'
+input_folder = 'D:\\NARANJAS\\Img\\REALES'  # Reemplaza con la ruta de tu carpeta de imágenes
+output_file = 'resultados_reales.csv'
 
 # Lista de rutas de imágenes en la carpeta, agregar mas extensiones de archivo de imagen si se necesita
 image_paths = [os.path.join(input_folder, filename) for filename in os.listdir(input_folder) if filename.endswith(('.jpg', '.png', '.jpeg'))]
